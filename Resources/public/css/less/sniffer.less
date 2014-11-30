@@ -1,0 +1,26 @@
+.sniffer-block {
+  position: absolute;
+  z-index: 1;
+  top: 2px;
+  left: -1px;
+  .dropdown-toggle {
+    font-size: 11px;
+    color: #fff;
+  }
+  .dropdown-menu {
+    padding: 10px;
+    ul:empty {
+      display: none
+    }
+    li {
+      white-space: nowrap;
+      .page-title {
+        max-width: 100px;
+        text-overflow: ellipsis;
+        display: inline-block;
+        overflow: hidden;
+        vertical-align: bottom;
+      }
+    }
+  }
+}

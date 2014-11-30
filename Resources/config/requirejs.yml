@@ -1,0 +1,5 @@
+config:
+    paths:
+        'acmedemouicontrol/js/app/modules/acme-module': 'bundles/acmedemouicontrol/js/app/modules/acme-module.js'
+    appmodules:
+        - acmedemouicontrol/js/app/modules/acme-module

@@ -1,0 +1,4 @@
+acmedemouicontrol:
+  sniffer:
+    empty_collection: "has no items"
+    clear: "Clear"
