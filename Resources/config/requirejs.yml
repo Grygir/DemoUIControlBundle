@@ -1,0 +1,7 @@
+config:
+    paths:
+        # add module path to config to make the module get into js build (oro.min.js)
+        'acmedemouicontrol/js/app/modules/acme-module': 'bundles/acmedemouicontrol/js/app/modules/acme-module.js'
+    appmodules:
+        # declare the modue as App Module
+        - acmedemouicontrol/js/app/modules/acme-module
