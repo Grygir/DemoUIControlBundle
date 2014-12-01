@@ -1,0 +1,5 @@
+acmedemouicontrol:
+  history:
+    title: "Navigation History"
+    empty_collection: "no items collected"
+    clear: "Clear history"

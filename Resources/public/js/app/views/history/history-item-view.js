@@ -9,7 +9,10 @@ define(function (require) {
     HistoryItemView = BaseView.extend({
         template: template,
         tagName: 'li',
-        className: 'history-item'
+        className: 'history-item',
+        listen: {
+            'change:visits model': 'render'
+        }
     });
 
     return HistoryItemView;

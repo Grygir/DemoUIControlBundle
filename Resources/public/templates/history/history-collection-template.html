@@ -3,11 +3,11 @@
     <div class="dropdown-menu open" role="menu" aria-labelledby="dLabel">
         <ul class="unstyled">
             <li class="nav-header nav-header-title">
-                Navigation History
+                <%= _.__('acmedemouicontrol.history.title') %>
                 <button class="clear btn btn-mini btn-link"
-                        title="Clear history"><i class="icon icon-trash"></i></button>
+                        title="<%= _.__('acmedemouicontrol.history.clear') %>"><i class="icon icon-trash"></i></button>
             </li>
         </ul>
-        <p class="empty-message">no items collected</p>
+        <p class="empty-message"><%= _.__('acmedemouicontrol.history.empty_collection') %></p>
     </div>
 </div>
