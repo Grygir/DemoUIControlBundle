@@ -3,7 +3,9 @@ define(function (require) {
     'use strict';
 
     var HistoryComponent,
-        BaseComponent = require('oroui/js/app/components/base/component');
+        BaseComponent = require('oroui/js/app/components/base/component'),
+        HistoryCollection = require('../models/history/history-collection'),
+        HistoryCollectionView = require('../views/history/history-collection-view');
 
     /**
      * The Controller for the History component, responsible for:
@@ -13,7 +15,12 @@ define(function (require) {
      */
     HistoryComponent = BaseComponent.extend({
         initialize: function (options) {
-            console.log('HistoryComponent is initialized', options);
+            this.collection = new HistoryCollection();
+            this.view = new HistoryCollectionView({
+                containerMethod: 'append',
+                container: options._sourceElement,
+                collection: this.collection
+            });
         }
     });
 
