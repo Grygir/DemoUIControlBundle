@@ -1,1 +1,5 @@
-<a href="<%- url %>" class="page-title"><%- title %></a>
+<a href="<%- url %>" class="page-title"
+   title="<%- _.__('acmedemouicontrol.history.visited_tooltip', {
+            visits: visits,
+            last: formatted
+        }, visits) %>"><%- title %></a>

@@ -3,3 +3,4 @@ acmedemouicontrol:
     title: "Navigation History"
     empty_collection: "no items collected"
     clear: "Clear history"
+    visited_tooltip: "{1}Visited once, {{ last }} |[2,+Inf]Visited {{ visits }} times, last {{ last }}"
