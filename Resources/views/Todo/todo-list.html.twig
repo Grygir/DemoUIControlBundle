@@ -4,6 +4,11 @@
         <div class="title">
             <span class="widget-title">ToDo List</span>
         </div>
+        {% set options = {
+            someOptions: true
+        } %}
+        <div data-page-component-module="acmedemouicontrol/js/app/components/todo-component"
+             data-page-component-options="{{ options|json_encode }}"></div>
     </div>
 {% endset %}
 {{ UI.scrollSubblock(null, [blockContent]) }}
