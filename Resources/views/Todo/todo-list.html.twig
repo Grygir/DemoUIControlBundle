@@ -2,10 +2,18 @@
 {% set blockContent %}
     <div class="box-type1">
         <div class="title">
-            <span class="widget-title">ToDo List</span>
+            <span class="widget-title">{{ 'acmedemouicontrol.todo_list.title'|trans }}</span>
         </div>
+        {% set data = [
+            {"task": "Make calls", "isDone": false, "added": 1417534053725},
+            {"task": "Clean the kitchen", "isDone": false, "added": 1417534053724},
+            {"task": "Do laundry", "isDone": false, "added": 1417534053723},
+            {"task": "Watch TV shows", "isDone": true, "added": 1417534053722},
+            {"task": "Play on PS", "isDone": true, "added": 1417534053721}
+        ] %}
+        {# options for the component + initital data #}
         {% set options = {
-            someOptions: true
+            data: data
         } %}
         <div data-page-component-module="acmedemouicontrol/js/app/components/todo-component"
              data-page-component-options="{{ options|json_encode }}"></div>

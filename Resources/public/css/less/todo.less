@@ -1,0 +1,21 @@
+.todo-list-block {
+  .tasks {
+    margin-top: 10px;
+    label {
+      display: inline-block;
+    }
+    input[type=checkbox] {
+      margin-top: 0;
+    }
+    .remove {
+      visibility: hidden;
+      color: #ddd;
+      &:hover {
+        color: #bbb;
+      }
+    }
+    .task:hover .remove {
+      visibility: visible;
+    }
+  }
+}

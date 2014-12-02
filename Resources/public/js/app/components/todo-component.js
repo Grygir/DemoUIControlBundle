@@ -3,7 +3,9 @@ define(function (require) {
     'use strict';
 
     var TodoComponent,
-        BaseComponent = require('oroui/js/app/components/base/component');
+        BaseComponent = require('oroui/js/app/components/base/component'),
+        TodoCollection = require('../models/todo/todo-collection'),
+        TodoCollectionView = require('../views/todo/todo-collection-view');
 
     /**
      * The Controller for the Todo component, responsible for:
@@ -12,13 +14,11 @@ define(function (require) {
      */
     TodoComponent = BaseComponent.extend({
         initialize: function (options) {
-            console.log('TodoComponent initialize', options);
-            TodoComponent.__super__.initialize.apply(this, arguments);
-        },
-
-        dispose: function () {
-            console.log('TodoComponent dispose');
-            TodoComponent.__super__.dispose.call(this);
+            this.collection = new TodoCollection(options.data);
+            this.view = new TodoCollectionView({
+                el: options._sourceElement,
+                collection: this.collection
+            });
         }
     });
 

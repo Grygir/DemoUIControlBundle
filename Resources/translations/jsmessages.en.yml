@@ -1,0 +1,5 @@
+acmedemouicontrol:
+  todo_list:
+    empty_collection: "No records found"
+    add_task: "Add"
+    task_placeholder: "Enter task…"
