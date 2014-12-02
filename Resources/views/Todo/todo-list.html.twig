@@ -1,0 +1,9 @@
+{% import 'OroUIBundle::macros.html.twig' as UI %}
+{% set blockContent %}
+    <div class="box-type1">
+        <div class="title">
+            <span class="widget-title">ToDo List</span>
+        </div>
+    </div>
+{% endset %}
+{{ UI.scrollSubblock(null, [blockContent]) }}
