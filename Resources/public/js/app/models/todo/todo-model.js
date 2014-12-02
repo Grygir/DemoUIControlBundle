@@ -10,6 +10,14 @@ define(function (require) {
             task: '',
             isDone: false,
             added: null
+        },
+
+        initialize: function (attributes, options) {
+            if (options.add && !this.get('added')) {
+                // the model just added
+                this.set('added', Date.now(), {silent: true});
+            }
+            TodoModel.__super__.initialize.call(this, attributes, options);
         }
     });
 
