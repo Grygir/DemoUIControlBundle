@@ -1,0 +1,38 @@
+.trumbowyg-button-pane li {
+  .trumbowyg-favoritePage-button,
+  .trumbowyg-pagePin-button {
+    background-image: none !important;
+    font: 0/0 a;
+    color: transparent;
+    text-indent: 0;
+    &:before {
+      text-decoration: inherit;
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.3em;
+      color: #2c2c2c;
+      font-family: 'FontAwesome';
+    }
+    &:after {
+      display: block;
+      content: " ";
+      position: absolute;
+      top: 25px;
+      right: 3px;
+      height: 0;
+      width: 0;
+      border: 3px solid transparent;
+      border-top-color: #555;
+    }
+  }
+  .trumbowyg-favoritePage-button {
+    &:before {
+      content: "\f005";
+    }
+  }
+  .trumbowyg-pagePin-button {
+    &:before {
+      content: "\f08d";
+    }
+  }
+}

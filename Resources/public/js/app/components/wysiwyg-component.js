@@ -5,6 +5,7 @@ define(function (require) {
         _ = require('underscore'),
         BaseComponent = require('oroui/js/app/components/base/component'),
         trumbowyg = require('acmedemouicontrol/lib/trumbowyg-1.1.7/trumbowyg');
+    require('acmedemouicontrol/js/trumbowyg/plugins/bookmark-links/bookmark-links');
 
     WysiwygComponent = BaseComponent.extend({
         initialize: function (options) {
@@ -39,7 +40,7 @@ define(function (require) {
                     'viewHTML',
                     '|', 'formatting',
                     '|', opts.semantic ? trumbowyg.btnsGrps.semantic : trumbowyg.btnsGrps.design,
-                    '|', 'link',
+                    '|', 'link', 'pagePin', 'favoritePage',
                     '|', trumbowyg.btnsGrps.justify,
                     '|', trumbowyg.btnsGrps.lists,
                     '|', 'horizontalRule'
