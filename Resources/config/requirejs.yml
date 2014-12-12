@@ -1,0 +1,9 @@
+config:
+    shim:
+        'acmedemouicontrol/lib/trumbowyg-1.1.7/trumbowyg':
+            deps:
+                - 'jquery'
+            exports: '$.trumbowyg'
+    paths:
+        # add path to config to make the module get into js build (oro.min.js)
+        'acmedemouicontrol/js/app/components/wysiwyg-component': 'bundles/acmedemouicontrol/js/app/components/wysiwyg-component.js'

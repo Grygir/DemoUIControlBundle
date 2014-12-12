@@ -2,11 +2,19 @@ define(function (require) {
     'use strict';
 
     var WysiwygComponent,
-        BaseComponent = require('oroui/js/app/components/base/component');
+        _ = require('underscore'),
+        BaseComponent = require('oroui/js/app/components/base/component'),
+        trumbowyg = require('acmedemouicontrol/lib/trumbowyg-1.1.7/trumbowyg');
 
     WysiwygComponent = BaseComponent.extend({
         initialize: function (options) {
-            console.log('Initialize WysiwygComponent');
+            var opts;
+            this.$editor = options._sourceElement;
+
+            // create trumbowyg instance
+            opts = this._prepareWysiwygOptions(options);
+            this.$editor.trumbowyg(opts);
+
             WysiwygComponent.__super__.initialize.apply(this, arguments);
         },
 
@@ -14,8 +22,32 @@ define(function (require) {
             if (this.disposed) {
                 return;
             }
-            console.log('Destroys WysiwygComponent');
+
+            // remove trumbowyg instance
+            this.$editor.trumbowyg('destroy');
+            delete this.$editor;
+
             WysiwygComponent.__super__.dispose.call(this);
+        },
+
+        _prepareWysiwygOptions: function (options) {
+            var defaults, opts;
+
+            opts = _.omit(options, '_sourceElement');
+            defaults = {
+                btns: [
+                    'viewHTML',
+                    '|', 'formatting',
+                    '|', opts.semantic ? trumbowyg.btnsGrps.semantic : trumbowyg.btnsGrps.design,
+                    '|', 'link',
+                    '|', trumbowyg.btnsGrps.justify,
+                    '|', trumbowyg.btnsGrps.lists,
+                    '|', 'horizontalRule'
+                ]
+            };
+            _.defaults(opts, defaults);
+
+            return opts;
         }
     });
 

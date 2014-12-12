@@ -1,0 +1,3 @@
+css:
+  'acmedemouicontrol':
+      - 'bundles/acmedemouicontrol/lib/trumbowyg-1.1.7/ui/trumbowyg.min.css'
