@@ -1,0 +1,8 @@
+parameters:
+    acme_demouicontrol.form.type.wysiwyg_type.class: Acme\DemoUIControlBundle\Form\Type\WYSIWYGType
+
+services:
+    acme_demouicontrol.form.type.wysiwyg_type:
+        class: %acme_demouicontrol.form.type.wysiwyg_type.class%
+        tags:
+            - { name: form.type, alias: "acme_demouicontrol_wysiwyg_type" }

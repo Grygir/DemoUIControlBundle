@@ -1,0 +1,12 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block acme_demouicontrol_wysiwyg_type_widget -%}
+    {# prepare data attributes for the page component #}
+    {% set attr = {
+        'data-page-component-module': 'acmedemouicontrol/js/app/components/wysiwyg-component',
+        'data-page-component-options': {
+        }|json_encode
+    }|merge(attr) %}
+    {# invoke parent from type block #}
+    {{ block('textarea_widget') }}
+{%- endblock acme_demouicontrol_wysiwyg_type_widget %}
