@@ -27,6 +27,19 @@ define(function (require) {
         clearCollection: function (e) {
             e.stopPropagation();
             this.collection.reset([]);
+        },
+
+        trackingStart: function () {
+            this.$el.addClass('tracking');
+        },
+
+        trackingEnd: function () {
+            this.$el.removeClass('tracking');
+        },
+
+        toggleFallback: function () {
+            HistoryCollectionView.__super__.toggleFallback.call(this);
+            this.$el.toggleClass('empty', this.$fallback.is(":visible"));
         }
     });
 

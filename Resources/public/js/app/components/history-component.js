@@ -17,6 +17,7 @@ define(function (require) {
      */
     HistoryComponent = BaseComponent.extend({
         listen: {
+            'page:beforeChange mediator': 'onPageBeforeChange',
             'page:update mediator': 'onPageUpdate',
             'page:afterChange mediator': 'onPageAfterChange'
         },
@@ -28,6 +29,10 @@ define(function (require) {
                 container: options._sourceElement,
                 collection: this.collection
             });
+        },
+
+        onPageBeforeChange: function () {
+            this.view.trackingStart();
         },
 
         onPageUpdate: function (data) {
@@ -69,6 +74,7 @@ define(function (require) {
                     visits: 1
                 })
             }
+            this.view.trackingEnd();
         }
     });
 
